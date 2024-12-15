@@ -1,6 +1,7 @@
 import { Outlet, NavLink } from 'react-router';
 
 import { House, Search, LibraryBig, Settings } from 'lucide-react';
+import MiniPlayer from '@/components/MiniPlayer';
 
 const navItems = [
    {
@@ -28,7 +29,7 @@ const navItems = [
 export default function DefaultMobileLayout() {
    return (
       <div className="w-dvw flex flex-col items-center">
-         <div className="fixed bottom-0 w-dvw min-w-full h-[70px] flex items-center">
+         <div className="navigation-menu fixed bottom-0 w-dvw min-w-full h-[70px] flex items-center">
             <ul className="w-full flex justify-evenly">
                {Array.from({ length: navItems.length }, (_, i) => (
                   <li
@@ -45,6 +46,8 @@ export default function DefaultMobileLayout() {
                ))}
             </ul>
          </div>
+
+         <MiniPlayer></MiniPlayer>
 
          <main>
             <Outlet />
